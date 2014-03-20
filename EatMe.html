@@ -1,0 +1,23 @@
+<html>
+<head>
+	<meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+	<ul data-bind="foreach: dishes">
+    <li data-bind="text: items"></li>
+</ul>
+    <!-- ko foreach: dishes -->
+                <li >
+                    <span data-bind="text: Name"></span>
+                </li>
+                <!-- /ko -->
+
+
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <script type="text/javascript" src="js/knockout-3.1.0.js"></script>
+	<script type="text/javascript" src="js/underscore.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
