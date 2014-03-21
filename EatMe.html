@@ -14,16 +14,21 @@
 	<div class="row dishes">
 	<!-- ko foreach: dishes -->
 	
-  <div style="width:300px;height:290px;float:left;padding-right:15px;padding-left:15px">
-    <div style="width:200px;height:200px">
-      <img  class="img-responsive"  data-bind="attr: { src: Img }">
+  <div class="element">
+    <div class="elementDetails">
+      <img  width="120px" height="90px"  data-bind="attr: { src: Img }">
       <div class="caption">
         <h3 data-bind="text: Name"></h3>
        </div>
      
     </div>
+    <div class="row">
+     <div class="col-md-1" data-bind="text: Proteins"></div>
+     <div class="col-md-1" data-bind="text: Carbonates"></div>
+     <div class="col-md-1" data-bind="text: Fats"></div>
+    </div>
     <div><p data-bind="text: Ingridients"></p></div>
-     <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+     <p><a href="#" class="btn btn-default" role="button">Завтрак</a><a href="#" class="btn btn-default" role="button">Обед</a><a href="#" class="btn btn-default" role="button">Ужин</a></p>
   </div>
 
 	<!-- /ko -->
