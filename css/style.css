@@ -1,0 +1,31 @@
+.dishes{
+	width:1200px;
+	margin-left:300px;
+	margin-top:100px
+}
+
+.textShadow {
+text-shadow: 0px 0px 8px grey;
+}
+
+.headerImage{
+	margin-left: 30px 
+}
+
+.top{
+height: 115px;
+border-bottom: 1px solid #eee;
+}
+
+.header {
+margin-top: 30px;
+margin-left: 80px;
+color: black;
+font-size: 40px;
+padding-top: 10px;
+
+}
+
+.column{
+	float:left;
+}

@@ -1,22 +1,36 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/bootstrap-theme.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
-	<ul data-bind="foreach: dishes">
-    <li data-bind="text: items"></li>
-</ul>
-    <!-- ko foreach: dishes -->
-                <li >
-                    <span data-bind="text: Name"></span>
-                </li>
-                <!-- /ko -->
+ <div class="top row">
+  <img class="col-xs-1 headerImage" src="img/main.jpg" height="110px">
+  <h1 class="col-lg-9 header textShadow" >Питайся Правильно</h1>
+</div>
+	
+	<div class="row dishes">
+	<!-- ko foreach: dishes -->
+	
+  <div style="width:300px;height:290px;float:left;padding-right:15px;padding-left:15px">
+    <div style="width:200px;height:200px">
+      <img  class="img-responsive"  data-bind="attr: { src: Img }">
+      <div class="caption">
+        <h3 data-bind="text: Name"></h3>
+       </div>
+     
+    </div>
+    <div><p data-bind="text: Ingridients"></p></div>
+     <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+  </div>
 
+	<!-- /ko -->
+</div>
 
-    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
-    <script type="text/javascript" src="js/knockout-3.1.0.js"></script>
+	<script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="js/knockout-3.1.0.js"></script>
 	<script type="text/javascript" src="js/underscore.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
