@@ -7,36 +7,68 @@
 </head>
 <body>
  <div class="top row">
-  <img class="col-xs-1 headerImage" src="img/main.jpg" height="110px">
+  <img class="column headerImage" src="img/main.jpg" height="110px">
   <h1 class="col-lg-9 header textShadow" >Питайся Правильно</h1>
 </div>
-	
-	<div class="row dishes">
-	<!-- ko foreach: dishes -->
-	
+<div class="column searches">
+    <div class="findField column">
+      <div class="input-group">
+        <span class="input-group-addon">Поиск</span>
+        <input type="text" class="form-control" placeholder="Введите название блюда" data-bind="value:filter ,valueUpdate:'afterkeydown'"/>
+      </div>
+    </div>
+    <div class="findAbbr column">
+      <div class="input-group">
+        <span class="input-group-addon" >Белки</span>
+        <input type="text" class="form-control" placeholder="" data-bind="value:prot ,valueUpdate:'afterkeydown'"/>
+      </div>
+    </div>
+    <div class="findAbbr column">
+      <div class="input-group">
+        <span class="input-group-addon">Жиры</span>
+        <input type="text" class="form-control" placeholder="" data-bind="value:fats ,valueUpdate:'afterkeydown'"/>
+      </div>
+    </div>
+    <div class="findAbbr column">
+      <div class="input-group">
+        <span class="input-group-addon">Угли</span>
+        <input type="text" class="form-control" placeholder="" data-bind="value:carb ,valueUpdate:'afterkeydown'"/>
+      </div>
+    </div>
+    <div class="findAbbr column">
+      <div class="input-group">
+        <span class="input-group-addon">Ккал</span>
+        <input type="text" class="form-control" placeholder="" data-bind="value:kkal ,valueUpdate:'afterkeydown'"/>
+      </div>
+    </div>
+</div>
+<div class="dishes">
+  <!-- ko foreach: filteredTasks -->
   <div class="element">
     <div class="elementDetails">
       <img  width="120px" height="90px"  data-bind="attr: { src: Img }">
       <div class="caption">
         <h3 data-bind="text: Name"></h3>
-       </div>
-     
-    </div>
-    <div class="row">
-     <div class="col-md-1" data-bind="text: Proteins"></div>
-     <div class="col-md-1" data-bind="text: Carbonates"></div>
-     <div class="col-md-1" data-bind="text: Fats"></div>
-    </div>
-    <div><p data-bind="text: Ingridients"></p></div>
-     <p><a href="#" class="btn btn-default" role="button">Завтрак</a><a href="#" class="btn btn-default" role="button">Обед</a><a href="#" class="btn btn-default" role="button">Ужин</a></p>
-  </div>
+      </div>
 
-	<!-- /ko -->
+    </div>
+    <div class="myrow">
+     <p class="column abb prot">Б</p><p class="column">: </p><span class="column text" data-bind="text: Proteins"></span>
+     <p class="column abb fats">Ж</p><p class="column">: </p><span class="column text" data-bind="text: Fats"></span>
+     <p class="column abb carb">У</p><p class="column">: </p><span class="column text" data-bind="text: Carbonates"></span>
+     <p class="column abb kkal">Ккал</p><p class="column">: </p><span class="column text" data-bind="text: Kkal"></span>
+   </div>
+   <p data-bind="text: Ingridients"></p>
+   <div class="bottomButtons">
+     <a href="#" class="btn btn-default " role="button">Завтрак</a><a href="#" class="btn btn-default" role="button">Обед</a><a href="#" class="btn btn-default" role="button">Ужин</a>
+   </div>
+ </div>
+ <!-- /ko -->
 </div>
 
-	<script type="text/javascript" src="js/jquery-2.0.3.js"></script>
-	<script type="text/javascript" src="js/knockout-3.1.0.js"></script>
-	<script type="text/javascript" src="js/underscore.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+<script type="text/javascript" src="js/underscore.min.js"></script>
+<script type="text/javascript" src="js/knockout-3.1.0.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
