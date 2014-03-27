@@ -1,5 +1,5 @@
 .dishes{
-	width:900px;
+	width:700px;
 	margin-left:200px;
 	margin-top:100px
 }
@@ -98,4 +98,10 @@ margin-left: 15px;
 
 .column{
 	float:left;
+}
+
+.meals{
+	border: 1px solid #eee;
+	width: auto;
+	height: auto;
 }

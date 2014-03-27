@@ -42,7 +42,7 @@
       </div>
     </div>
 </div>
-<div class="dishes">
+<div class="dishes column">
   <!-- ko foreach: filteredTasks -->
   <div class="element">
     <div class="elementDetails">
@@ -60,10 +60,21 @@
    </div>
    <p data-bind="text: Ingridients"></p>
    <div class="bottomButtons">
-     <a href="#" class="btn btn-default " role="button">Завтрак</a><a href="#" class="btn btn-default" role="button">Обед</a><a href="#" class="btn btn-default" role="button">Ужин</a>
+     <button id="breakfast" class="btn btn-default " role="button" data-bind="click: $root.addBreakfast">Завтрак</button><button id="lunch" class="btn btn-default" role="button">Обед</button><button id="dinner" class="btn btn-default" role="button" >Ужин</button>
    </div>
  </div>
  <!-- /ko -->
+</div>
+
+<div class="meals column">
+  <!-- ko if: breakfast().length>=1 -->
+<p>Завтраки</p>
+  <!-- /ko -->
+  <div class="column">
+  <!-- ko foreach: filteredBreakfast -->
+  <p data-bind="text: Name"></p>
+  <!-- /ko -->
+  </div>
 </div>
 
 <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
