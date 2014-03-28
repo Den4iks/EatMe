@@ -1,0 +1,31 @@
+   
+var viewModel = {
+      dishes: ko.observableArray(),
+      filter : ko.observable(''),
+      prot : ko.observable(''),
+      fats : ko.observable(''),
+      carb : ko.observable(''),
+      kkal : ko.observable(''),
+      typeOfMeals : ko.observable(''),
+      kkalLimit : ko.observable(''),
+      protLimit : ko.observable(''),
+      fatLimit : ko.observable(''),
+      carbLimit : ko.observable(''),
+      kkalLimitLunch : ko.observable(''),
+      protLimitLunch : ko.observable(''),
+      fatLimitLunch : ko.observable(''),
+      carbLimitLunch : ko.observable(''),
+      kkalLimitDinner : ko.observable(''),
+      protLimitDinner : ko.observable(''),
+      fatLimitDinner : ko.observable(''),
+      carbLimitDinner : ko.observable(''),
+      kkalLimitForDay : ko.observable(''),
+      protLimitForDay : ko.observable(''),
+      fatLimitForDay : ko.observable(''),
+      carbLimitForDay : ko.observable(''),
+      alert : ko.observable(''),
+      breakfast : ko.observableArray(''),
+      lunch : ko.observableArray(''),
+      dinner : ko.observableArray('')
+};
+

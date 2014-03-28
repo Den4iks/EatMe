@@ -4,39 +4,276 @@
 	<link href="css/bootstrap.css" rel="stylesheet" />
 	<link href="css/bootstrap-theme.css" rel="stylesheet" />
 	<link href="css/style.css" rel="stylesheet" />
+   <link href="css/bootstrap-select.css" rel="stylesheet" />
 </head>
 <body>
  <div class="top row">
-  <img class="col-xs-1 headerImage" src="img/main.jpg" height="110px">
+  <img class="column headerImage" src="img/main.jpg" height="110px">
   <h1 class="col-lg-9 header textShadow" >Питайся Правильно</h1>
 </div>
-	
-	<div class="row dishes">
-	<!-- ko foreach: dishes -->
-	
+<div class="column searches">
+  <div class="findField column">
+    <div class="input-group">
+      <span class="input-group-addon">Поиск</span>
+      <input type="text" class="form-control" placeholder="Введите название блюда" data-bind="value:filter ,valueUpdate:'afterkeydown'"/>
+    </div>
+  </div>
+  <div class="findAbbr column">
+    <div class="input-group">
+      <span class="input-group-addon" >Белки</span>
+      <input type="text" class="form-control" placeholder="" data-bind="value:prot ,valueUpdate:'afterkeydown'"/>
+    </div>
+  </div>
+  <div class="findAbbr column">
+    <div class="input-group">
+      <span class="input-group-addon">Жиры</span>
+      <input type="text" class="form-control" placeholder="" data-bind="value:fats ,valueUpdate:'afterkeydown'"/>
+    </div>
+  </div>
+  <div class="findAbbr column">
+    <div class="input-group">
+      <span class="input-group-addon">Угли</span>
+      <input type="text" class="form-control" placeholder="" data-bind="value:carb ,valueUpdate:'afterkeydown'"/>
+    </div>
+  </div>
+  <div class="findAbbr column">
+    <div class="input-group">
+      <span class="input-group-addon">Ккал</span>
+      <input type="text" class="form-control" placeholder="" data-bind="value:kkal ,valueUpdate:'afterkeydown'"/>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- ko if: alert().length>=1 -->
+<div class="limit">
+  <p data-bind="text:alert"></p>
+</div>
+<!-- /ko -->
+
+<div class="dishes column">
+  <!-- ko foreach: filteredTasks -->
   <div class="element">
     <div class="elementDetails">
       <img  width="120px" height="90px"  data-bind="attr: { src: Img }">
       <div class="caption">
         <h3 data-bind="text: Name"></h3>
-       </div>
-     
-    </div>
-    <div class="row">
-     <div class="col-md-1" data-bind="text: Proteins"></div>
-     <div class="col-md-1" data-bind="text: Carbonates"></div>
-     <div class="col-md-1" data-bind="text: Fats"></div>
-    </div>
-    <div><p data-bind="text: Ingridients"></p></div>
-     <p><a href="#" class="btn btn-default" role="button">Завтрак</a><a href="#" class="btn btn-default" role="button">Обед</a><a href="#" class="btn btn-default" role="button">Ужин</a></p>
-  </div>
+      </div>
 
-	<!-- /ko -->
+    </div>
+    <div class="myrow">
+     <p class="column abb prot">Б</p><p class="column">: </p><span class="column text" data-bind="text: Proteins"></span>
+     <p class="column abb fats">Ж</p><p class="column">: </p><span class="column text" data-bind="text: Fats"></span>
+     <p class="column abb carb">У</p><p class="column">: </p><span class="column text" data-bind="text: Carbonates"></span>
+     <p class="column abb kkal">Ккал</p><p class="column">: </p><span class="column text" data-bind="text: Kkal"></span>
+   </div>
+   <p data-bind="text: Ingridients"></p>
+   <div class="bottomButtons">
+     <button id="breakfast" class="btn btn-default " role="button" data-bind="click: $root.addBreakfast">Завтрак</button><button id="lunch" class="btn btn-default" role="button" data-bind="click: $root.addLunch">Обед</button><button id="dinner" class="btn btn-default" role="button" data-bind="click: $root.addDinner">Ужин</button>
+   </div>
+ </div>
+ <!-- /ko -->
 </div>
 
-	<script type="text/javascript" src="js/jquery-2.0.3.js"></script>
-	<script type="text/javascript" src="js/knockout-3.1.0.js"></script>
-	<script type="text/javascript" src="js/underscore.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+<div class="meals column" style='padding-left:25px'>
+  <p style="text-align:center;font-weight: bold">Завтрак</p>
+
+  <div class="">
+    <table class="table table-bordered">
+     <thead>
+      <tr class='textSize'>
+        <th>Название Блюда</th>
+        <th class='prot'>Белки</th>
+        <th class='fats'>Жиры</th>
+        <th class='carb'>Углеводы</th>
+        <th class='kkal'>Ккал</th>
+      </tr>
+    </thead>
+    <tbody class='textSize'>
+     <!-- ko foreach: filteredBreakfast -->
+     <tr>
+      <td data-bind="text:Name"></td>
+      <td data-bind="text: Proteins"></td>
+      <td data-bind="text: Fats"></td>
+      <td data-bind="text: Carbonates"></td>
+      <td data-bind="text:Kkal"></td>
+      <td> <a href="#" class="badge" data-bind="click: $root.removeBreakfast">x</a></td>
+    </tr>
+    <!-- /ko -->
+    <tr>
+      <td>Итого</td>
+      <td data-bind="text:summProt"></td>
+      <td data-bind="text:summFats"></td>
+      <td data-bind="text:summCarb"></td>
+      <td data-bind="text:summKkal"></td>
+    </tr>
+    <tr class='textSize' style='border-top: 2px solid red'>
+      <th>Введите лимит</th>
+      <th contenteditable="true" data-bind="editableText: protLimit"></th>
+      <th contenteditable="true" data-bind="editableText: fatLimit"></th>
+      <th contenteditable="true" data-bind="editableText: carbLimit"></th>
+      <th contentEditable="true" data-bind="editableText: kkalLimit" ></th>
+    </tr>
+    <tr>
+      <td>Остаток</td>
+      <td data-bind="text:displayProtLimit,style{color: displayProtLimit()>0 ? 'green' : 'red'}"></td>
+      <td data-bind="text:displayFatLimit,style{color: displayFatLimit()>0 ? 'green' : 'red'}"></td>
+      <td data-bind="text:displayCarbLimit,style{color: displayCarbLimit()>0 ? 'green' : 'red'}"></td>
+      <td data-bind="text:displayKkalLimit,style{color: displayKkalLimit()>0 ? 'green' : 'red'}"></td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="text-align:center;font-weight: bold">Обед</p>
+
+<div class="">
+  <table class="table table-bordered">
+   <thead>
+    <tr class='textSize'>
+      <th>Название Блюда</th>
+      <th class='prot'>Белки</th>
+      <th class='fats'>Жиры</th>
+      <th class='carb'>Углеводы</th>
+      <th class='kkal'>Ккал</th>
+    </tr>
+  </thead>
+  <tbody class='textSize'>
+   <!-- ko foreach: filteredLunch -->
+   <tr>
+    <td data-bind="text: Name"></td>
+    <td data-bind="text: Proteins"></td>
+    <td data-bind="text: Fats"></td>
+    <td data-bind="text: Carbonates"></td>
+    <td data-bind="text: Kkal"></td>
+    <td> <a href="#" class="badge" data-bind="click: $root.removeLunch">x</a></td>
+  </tr>
+  <!-- /ko -->
+  <tr>
+    <td>Итого</td>
+    <td data-bind="text:summProtLunch"></td>
+    <td data-bind="text:summFatsLunch"></td>
+    <td data-bind="text:summCarbLunch"></td>
+    <td data-bind="text:summKkalLunch"></td>
+  </tr>
+  <tr class='textSize' style='border-top: 2px solid red'>
+    <th>Введите лимит</th>
+    <th contenteditable="true" data-bind="editableText: protLimitLunch"></th>
+    <th contenteditable="true" data-bind="editableText: fatLimitLunch"></th>
+    <th contenteditable="true" data-bind="editableText: carbLimitLunch"></th>
+    <th contentEditable="true" data-bind="editableText: kkalLimitLunch" ></th>
+  </tr>
+  <tr>
+    <td>Остаток</td>
+    <td data-bind="text:displayProtLimitLunch,style{color: displayProtLimitLunch()>0 ? 'green' : 'red'}"></td>
+    <td data-bind="text:displayFatLimitLunch,style{color: displayFatLimitLunch()>0 ? 'green' : 'red'}"></td>
+    <td data-bind="text:displayCarbLimitLunch,style{color: displayCarbLimitLunch()>0 ? 'green' : 'red'}"></td>
+    <td data-bind="text:displayKkalLimitLunch,style{color: displayKkalLimitLunch()>0 ? 'green' : 'red'}"></td>
+  </tr>
+</tbody>
+</table>
+
+<p style="text-align:center;font-weight: bold">Ужин</p>
+
+<div class="">
+  <table class="table table-bordered">
+   <thead>
+    <tr class='textSize'>
+      <th>Название Блюда</th>
+      <th class='prot'>Белки</th>
+      <th class='fats'>Жиры</th>
+      <th class='carb'>Углеводы</th>
+      <th class='kkal'>Ккал</th>
+    </tr>
+  </thead>
+  <tbody class='textSize'>
+   <!-- ko foreach: filteredDinner -->
+   <tr>
+    <td data-bind="text: Name"></td>
+    <td data-bind="text: Proteins"></td>
+    <td data-bind="text: Fats"></td>
+    <td data-bind="text: Carbonates"></td>
+    <td data-bind="text: Kkal"></td>
+    <td> <a href="#" class="badge" data-bind="click: $root.removeDinner">x</a></td>
+  </tr>
+  <!-- /ko -->
+  <tr>
+    <td>Итого</td>
+    <td data-bind="text:summProtDinner"></td>
+    <td data-bind="text:summFatsDinner"></td>
+    <td data-bind="text:summCarbDinner"></td>
+    <td data-bind="text:summKkalDinner"></td>
+  </tr>
+  <tr class='textSize' style='border-top: 2px solid red'>
+    <th>Введите лимит</th>
+    <th contenteditable="true" data-bind="editableText: protLimitDinner"></th>
+    <th contenteditable="true" data-bind="editableText: fatLimitDinner"></th>
+    <th contenteditable="true" data-bind="editableText: carbLimitDinner"></th>
+    <th contentEditable="true" data-bind="editableText: kkalLimitDinner" ></th>
+  </tr>
+  <tr>
+    <td>Остаток</td>
+    <td data-bind="text:displayProtLimitDinner,style{color: displayProtLimitDinner()>0 ? 'green' : 'red'}"></td>
+    <td data-bind="text:displayFatLimitDinner,style{color: displayFatLimitDinner()>0 ? 'green' : 'red'}"></td>
+    <td data-bind="text:displayCarbLimitDinner,style{color: displayCarbLimitDinner()>0 ? 'green' : 'red'}"></td>
+    <td data-bind="text:displayKkalLimitDinner,style{color: displayKkalLimitDinner()>0 ? 'green' : 'red'}"></td>
+  </tr>
+</tbody>
+</table>
+
+<p style="text-align:center;font-weight: bold">Всего</p>
+
+<div class="">
+  <table class="table table-bordered">
+   <thead>
+    <tr class='textSize'>
+      <th></th>
+      <th class='prot'>Белки</th>
+      <th class='fats'>Жиры</th>
+      <th class='carb'>Углеводы</th>
+      <th class='kkal'>Ккал</th>
+    </tr>
+  </thead>
+  <tbody class='textSize'>
+  <tr>
+    <td>Итого</td>
+    <td data-bind="text:summProtForDay"></td>
+    <td data-bind="text:summFatsForDay"></td>
+    <td data-bind="text:summCarbForDay"></td>
+    <td data-bind="text:summKkalForDay"></td>
+  </tr>
+  <tr class='textSize' style='border-top: 2px solid red'>
+    <th>Введите лимит</th>
+    <th contenteditable="true" data-bind="editableText: protLimitForDay"></th>
+    <th contenteditable="true" data-bind="editableText: fatLimitForDay"></th>
+    <th contenteditable="true" data-bind="editableText: carbLimitForDay"></th>
+    <th contentEditable="true" data-bind="editableText: kkalLimitForDay" ></th>
+  </tr>
+  <tr>
+    <td>Остаток</td>
+    <td data-bind="text:displayProtLimitForDay,style{color: displayProtLimitForDay()>0 ? 'green' : 'red'}"></td>
+    <td data-bind="text:displayFatsLimitForDay,style{color: displayFatsLimitForDay()>0 ? 'green' : 'red'}"></td>
+    <td data-bind="text:displayCarbLimitForDay,style{color: displayCarbLimitForDay()>0 ? 'green' : 'red'}"></td>
+    <td data-bind="text:displayKkalLimitForDay,style{color: displayKkalLimitForDay()>0 ? 'green' : 'red'}"></td>
+  </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+<script type="text/javascript" src="js/underscore.min.js"></script>
+<script type="text/javascript" src="js/knockout-3.1.0.js"></script>
+<script type="text/javascript" src="js/koBindings.js"></script>
+<script type="text/javascript" src="js/bootstrap-select.js"></script>
+<script type="text/javascript" src="js/viewModel.js"></script>
+<script type="text/javascript" src="js/viewModelFilter.js"></script>
+<script type="text/javascript" src="js/allDay.js"></script>
+<script type="text/javascript" src="js/breakfast.js"></script>
+<script type="text/javascript" src="js/lunch.js"></script>
+<script type="text/javascript" src="js/dinner.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
+
