@@ -130,3 +130,18 @@
 border: 3px solid red;
 color: red;
 }
+
+ul.dropdown-menu-form {
+    padding: 5px 10px 0;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+@media screen and (min-width:1480px) {
+.dishes{
+	width:1000px;
+	margin-left:25px;
+	margin-top:50px;
+}
+
+}
