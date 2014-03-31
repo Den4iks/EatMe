@@ -4,7 +4,7 @@
 	<link href="css/bootstrap.css" rel="stylesheet" />
 	<link href="css/bootstrap-theme.css" rel="stylesheet" />
 	<link href="css/style.css" rel="stylesheet" />
-   <link href="css/bootstrap-select.css" rel="stylesheet" />
+ <link href="css/bootstrap-select.css" rel="stylesheet" />
 </head>
 <body>
  <div class="top row">
@@ -42,7 +42,12 @@
       <input type="text" class="form-control" placeholder="" data-bind="value:kkal ,valueUpdate:'afterkeydown',style: { border: kkal.hasError() ? '1px solid red' : ''}"/>
     </div>
   </div>
-
+  <div class="findtype column">
+    <div class="input-group">
+      <span class="input-group-addon">Тип</span>
+      <select class="form-control" data-bind="options: typeOfMeals, value: selectedTypeOfMeals"></select>
+    </div>
+  </div>
 </div>
 
 
@@ -236,28 +241,28 @@
     </tr>
   </thead>
   <tbody class='textSize'>
-  <tr>
-    <td>Итого</td>
-    <td data-bind="text:summProtForDay"></td>
-    <td data-bind="text:summFatsForDay"></td>
-    <td data-bind="text:summCarbForDay"></td>
-    <td data-bind="text:summKkalForDay"></td>
-  </tr>
-  <tr class='textSize' style='border-top: 2px solid red'>
-    <th>Введите лимит</th>
-    <th contenteditable="true" data-bind="editableText: protLimitForDay"></th>
-    <th contenteditable="true" data-bind="editableText: fatLimitForDay"></th>
-    <th contenteditable="true" data-bind="editableText: carbLimitForDay"></th>
-    <th contentEditable="true" data-bind="editableText: kkalLimitForDay" ></th>
-  </tr>
-  <tr>
-    <td>Остаток</td>
-    <td data-bind="text:displayProtLimitForDay,style{color: displayProtLimitForDay()>0 ? 'green' : 'red'}"></td>
-    <td data-bind="text:displayFatsLimitForDay,style{color: displayFatsLimitForDay()>0 ? 'green' : 'red'}"></td>
-    <td data-bind="text:displayCarbLimitForDay,style{color: displayCarbLimitForDay()>0 ? 'green' : 'red'}"></td>
-    <td data-bind="text:displayKkalLimitForDay,style{color: displayKkalLimitForDay()>0 ? 'green' : 'red'}"></td>
-  </tr>
-</tbody>
+    <tr>
+      <td>Итого</td>
+      <td data-bind="text:summProtForDay"></td>
+      <td data-bind="text:summFatsForDay"></td>
+      <td data-bind="text:summCarbForDay"></td>
+      <td data-bind="text:summKkalForDay"></td>
+    </tr>
+    <tr class='textSize' style='border-top: 2px solid red'>
+      <th>Введите лимит</th>
+      <th contenteditable="true" data-bind="editableText: protLimitForDay"></th>
+      <th contenteditable="true" data-bind="editableText: fatLimitForDay"></th>
+      <th contenteditable="true" data-bind="editableText: carbLimitForDay"></th>
+      <th contentEditable="true" data-bind="editableText: kkalLimitForDay" ></th>
+    </tr>
+    <tr>
+      <td>Остаток</td>
+      <td data-bind="text:displayProtLimitForDay,style{color: displayProtLimitForDay()>0 ? 'green' : 'red'}"></td>
+      <td data-bind="text:displayFatsLimitForDay,style{color: displayFatsLimitForDay()>0 ? 'green' : 'red'}"></td>
+      <td data-bind="text:displayCarbLimitForDay,style{color: displayCarbLimitForDay()>0 ? 'green' : 'red'}"></td>
+      <td data-bind="text:displayKkalLimitForDay,style{color: displayKkalLimitForDay()>0 ? 'green' : 'red'}"></td>
+    </tr>
+  </tbody>
 </table>
 </div>
 </div>

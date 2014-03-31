@@ -4,7 +4,7 @@ viewModel.filteredTasks = ko.computed (function(){
     	var prot = viewModel.prot().trim();
     	var fats = viewModel.fats().trim();
     	var carb = viewModel.carb().trim();
-        var type = viewModel.typeOfMeals().trim();
+        var type = viewModel.selectedTypeOfMeals().trim();
     	var result = [];
     	var multiplyFilters = [];
     	
