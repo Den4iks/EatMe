@@ -1,12 +1,7 @@
 .dishes{
 	width:700px;
-<<<<<<< HEAD
 	margin-left:25px;
 	margin-top:50px;
-=======
-	margin-left:200px;
-	margin-top:100px
->>>>>>> 819a7e033c916ccce02ef137de5da1edc4642c29
 }
 
 .textShadow {
@@ -31,21 +26,12 @@
 .abb{
 	color: black;
 	border-radius: 10px;
-<<<<<<< HEAD
 	text-align: center;
 	text-shadow: 0px 0px 8px grey;
 }
 
 .kkal{
 	background-image: -webkit-radial-gradient(center, ellipse closest-side, #08DEFF 0%, #FFFFFF 100%);
-=======
-    text-align: center;
-    text-shadow: 0px 0px 8px grey;
-}
-
-.kkal{
-	   background-image: -webkit-radial-gradient(center, ellipse closest-side, #08DEFF 0%, #FFFFFF 100%);
->>>>>>> 819a7e033c916ccce02ef137de5da1edc4642c29
 
 }
 
@@ -58,11 +44,7 @@
 }
 
 .carb{
-<<<<<<< HEAD
 	background-image: -webkit-radial-gradient(center, ellipse farthest-side, #FFF700 0%, #FFFFFF 100%);
-=======
-background-image: -webkit-radial-gradient(center, ellipse farthest-side, #FFF700 0%, #FFFFFF 100%);
->>>>>>> 819a7e033c916ccce02ef137de5da1edc4642c29
 }
 
 .element{
@@ -70,10 +52,6 @@ background-image: -webkit-radial-gradient(center, ellipse farthest-side, #FFF700
 	height:320px;
 	float:left;
 	padding-left: 15px;
-<<<<<<< HEAD
-=======
-	padding-right: 15px;
->>>>>>> 819a7e033c916ccce02ef137de5da1edc4642c29
 	padding-top: 15px;
 	margin:15px;
 	border: 1px solid #eee;
@@ -87,23 +65,7 @@ background-image: -webkit-radial-gradient(center, ellipse farthest-side, #FFF700
 .top{
 	height: 115px;
 	border-bottom: 1px solid #eee;
-<<<<<<< HEAD
-=======
 }
-
-.bottomButtons{
-bottom:0px;
-}
-
-.findField{
-width: 260px;
->>>>>>> 819a7e033c916ccce02ef137de5da1edc4642c29
-}
-.findAbbr{
-width: 125px;
-margin-left: 15px;
-}
-
 
 .bottomButtons{
 	bottom:0px;
@@ -129,16 +91,7 @@ margin-left: 15px;
 	color: black;
 	font-size: 40px;
 	padding-top: 10px;
-<<<<<<< HEAD
-=======
 
-}
->>>>>>> 819a7e033c916ccce02ef137de5da1edc4642c29
-
-.searches{
-	margin-left: 100px;
-	margin-top: 15px;
-	border: 1px solid #eee;
 }
 
 .searches{
@@ -152,7 +105,6 @@ margin-left: 15px;
 }
 
 .meals{
-<<<<<<< HEAD
 	margin-top:70px;
 	width: auto;
 	height: auto;
@@ -172,9 +124,9 @@ margin-left: 15px;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 	background-color: #fcf8e3;
 	border: 1px solid #fbeed5;
-=======
-	border: 1px solid #eee;
-	width: auto;
-	height: auto;
->>>>>>> 819a7e033c916ccce02ef137de5da1edc4642c29
+}
+
+.error input {
+border: 3px solid red;
+color: red;
 }

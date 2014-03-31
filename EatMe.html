@@ -12,7 +12,6 @@
   <h1 class="col-lg-9 header textShadow" >Питайся Правильно</h1>
 </div>
 <div class="column searches">
-<<<<<<< HEAD
   <div class="findField column">
     <div class="input-group">
       <span class="input-group-addon">Поиск</span>
@@ -22,25 +21,25 @@
   <div class="findAbbr column">
     <div class="input-group">
       <span class="input-group-addon" >Белки</span>
-      <input type="text" class="form-control" placeholder="" data-bind="value:prot ,valueUpdate:'afterkeydown'"/>
+      <input type="text" class="form-control" placeholder="" data-bind="value:prot ,valueUpdate:'afterkeydown',style: { border: prot.hasError() ? '1px solid red' : ''}"/>
     </div>
   </div>
   <div class="findAbbr column">
     <div class="input-group">
       <span class="input-group-addon">Жиры</span>
-      <input type="text" class="form-control" placeholder="" data-bind="value:fats ,valueUpdate:'afterkeydown'"/>
+      <input type="text" class="form-control" placeholder="" data-bind="value:fats ,valueUpdate:'afterkeydown',style: { border: fats.hasError() ? '1px solid red' : ''}"/>
     </div>
   </div>
   <div class="findAbbr column">
     <div class="input-group">
       <span class="input-group-addon">Угли</span>
-      <input type="text" class="form-control" placeholder="" data-bind="value:carb ,valueUpdate:'afterkeydown'"/>
+      <input type="text" class="form-control" placeholder="" data-bind="value:carb ,valueUpdate:'afterkeydown',style: { border: carb.hasError() ? '1px solid red' : ''}"/>
     </div>
   </div>
   <div class="findAbbr column">
     <div class="input-group">
       <span class="input-group-addon">Ккал</span>
-      <input type="text" class="form-control" placeholder="" data-bind="value:kkal ,valueUpdate:'afterkeydown'"/>
+      <input type="text" class="form-control" placeholder="" data-bind="value:kkal ,valueUpdate:'afterkeydown',style: { border: kkal.hasError() ? '1px solid red' : ''}"/>
     </div>
   </div>
 
@@ -54,39 +53,6 @@
 </div>
 <!-- /ko -->
 
-=======
-    <div class="findField column">
-      <div class="input-group">
-        <span class="input-group-addon">Поиск</span>
-        <input type="text" class="form-control" placeholder="Введите название блюда" data-bind="value:filter ,valueUpdate:'afterkeydown'"/>
-      </div>
-    </div>
-    <div class="findAbbr column">
-      <div class="input-group">
-        <span class="input-group-addon" >Белки</span>
-        <input type="text" class="form-control" placeholder="" data-bind="value:prot ,valueUpdate:'afterkeydown'"/>
-      </div>
-    </div>
-    <div class="findAbbr column">
-      <div class="input-group">
-        <span class="input-group-addon">Жиры</span>
-        <input type="text" class="form-control" placeholder="" data-bind="value:fats ,valueUpdate:'afterkeydown'"/>
-      </div>
-    </div>
-    <div class="findAbbr column">
-      <div class="input-group">
-        <span class="input-group-addon">Угли</span>
-        <input type="text" class="form-control" placeholder="" data-bind="value:carb ,valueUpdate:'afterkeydown'"/>
-      </div>
-    </div>
-    <div class="findAbbr column">
-      <div class="input-group">
-        <span class="input-group-addon">Ккал</span>
-        <input type="text" class="form-control" placeholder="" data-bind="value:kkal ,valueUpdate:'afterkeydown'"/>
-      </div>
-    </div>
-</div>
->>>>>>> 819a7e033c916ccce02ef137de5da1edc4642c29
 <div class="dishes column">
   <!-- ko foreach: filteredTasks -->
   <div class="element">
@@ -105,16 +71,11 @@
    </div>
    <p data-bind="text: Ingridients"></p>
    <div class="bottomButtons">
-<<<<<<< HEAD
      <button id="breakfast" class="btn btn-default " role="button" data-bind="click: $root.addBreakfast">Завтрак</button><button id="lunch" class="btn btn-default" role="button" data-bind="click: $root.addLunch">Обед</button><button id="dinner" class="btn btn-default" role="button" data-bind="click: $root.addDinner">Ужин</button>
-=======
-     <button id="breakfast" class="btn btn-default " role="button" data-bind="click: $root.addBreakfast">Завтрак</button><button id="lunch" class="btn btn-default" role="button">Обед</button><button id="dinner" class="btn btn-default" role="button" >Ужин</button>
->>>>>>> 819a7e033c916ccce02ef137de5da1edc4642c29
    </div>
  </div>
  <!-- /ko -->
 </div>
-<<<<<<< HEAD
 
 <div class="meals column" style='padding-left:25px'>
   <p style="text-align:center;font-weight: bold">Завтрак</p>
@@ -299,24 +260,12 @@
 </tbody>
 </table>
 </div>
-=======
-
-<div class="meals column">
-  <!-- ko if: breakfast().length>=1 -->
-<p>Завтраки</p>
-  <!-- /ko -->
-  <div class="column">
-  <!-- ko foreach: filteredBreakfast -->
-  <p data-bind="text: Name"></p>
-  <!-- /ko -->
-  </div>
->>>>>>> 819a7e033c916ccce02ef137de5da1edc4642c29
 </div>
 
 <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
 <script type="text/javascript" src="js/underscore.min.js"></script>
 <script type="text/javascript" src="js/knockout-3.1.0.js"></script>
-<<<<<<< HEAD
+<script type="text/javascript" src="js/koExtenders.js"></script>
 <script type="text/javascript" src="js/koBindings.js"></script>
 <script type="text/javascript" src="js/bootstrap-select.js"></script>
 <script type="text/javascript" src="js/viewModel.js"></script>
@@ -325,8 +274,6 @@
 <script type="text/javascript" src="js/breakfast.js"></script>
 <script type="text/javascript" src="js/lunch.js"></script>
 <script type="text/javascript" src="js/dinner.js"></script>
-=======
->>>>>>> 819a7e033c916ccce02ef137de5da1edc4642c29
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

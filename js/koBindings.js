@@ -1,6 +1,6 @@
 ko.bindingHandlers.editableText = {
 	init: function(element, valueAccessor) {
-		$(element).on('blur', function() {
+		$(element).on('keyup', function() {
 			var observable = valueAccessor();
 			observable( $(this).text() );
 		});
